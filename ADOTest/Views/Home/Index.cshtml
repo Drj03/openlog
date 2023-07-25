@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ADOTest.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@{
+    string search = ViewBag.search;
+}
+
+@foreach (var emp in Model)
+{
+
+    <p>
+        @emp.name
+    </p>
+    <p>
+        @emp.age
+    </p>
+    <p>
+        @emp.salary
+    </p>
+}

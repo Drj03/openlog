@@ -1,0 +1,14 @@
+﻿@model ADOTest.ViewModels.EmpandDeptViewModel
+
+<div>
+    @foreach(var e in Model.emp)
+    {
+        <p>
+            @e.name
+            @e.age
+            @e.salary
+            @e.deptId
+            @e.city
+        </p>
+    }
+</div>

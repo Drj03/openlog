@@ -1,0 +1,56 @@
+﻿@model ADOTest.Models.Employee
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+    <form asp-controller="Home" asp-action="CreateEmployee" method="post">
+
+        <div>
+            <label asp-for="name">Name</label>
+            <div>
+                <input asp-for="name" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="age">Age</label>
+            <div>
+                <input asp-for="age" />
+                <span asp-validation-for="age" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="salary">Salary</label>
+            <div>
+                <input asp-for="salary" />
+                <span asp-validation-for="salary" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="deptId">dept Id</label>
+            <div>
+                <input asp-for="deptId" />
+                <span asp-validation-for="deptId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="city">city</label>
+            <div>
+                <input asp-for="city" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+        </div>
+
+       <div> 
+           <button type="submit">
+               create
+           </button>
+       </div>
+    </form>
+</div>

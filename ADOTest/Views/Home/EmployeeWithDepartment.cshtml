@@ -1,0 +1,29 @@
+﻿@model List<ADOTest.ViewModels.EmployeesDepartmentViewModel>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>salary</th>
+        <th>department</th>
+        <th>compony</th>
+    </tr>
+       @Model.
+        @foreach (var e in Model)
+        {
+            <tr>
+            <td>@e.name</td>
+            <td>@e.age</td>
+            <td>@e.salary</td>
+            <td>@e.deptName</td>
+            <th>@e.componyName</th>
+            </tr>
+         
+        }
+    
+</table>
