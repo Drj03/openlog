@@ -2,6 +2,7 @@
 using ADOTest.Repositories;
 using ADOTest.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -26,7 +27,7 @@ namespace ADOTest.Controllers
 
        // [Route("{search}")]
        // [HttpPost]
-        public IActionResult Index(string search)
+        public IActionResult Index(string? search)
         {
             ViewBag.Search = search; 
             var allEmloyee = repo.allEmployee();
@@ -39,6 +40,27 @@ namespace ADOTest.Controllers
 
             var model = repo.searchEmployee(search);
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAlbums()
+        {
+           List<Albums> reservation = new List<Albums>();
+         //   IEnumerable<Albums> vlues=new System.Collections.Generic.IEnumerable<Albums>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://localhost:7254/Home/GetAlbums/albums"))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        reservation = JsonConvert.DeserializeObject<List<Albums>>(apiResponse);
+                    }
+                    else
+                        ViewBag.StatusCode = response.StatusCode;
+                }
+            }
+            return View(reservation);
         }
 
         [Route("{id}")]
