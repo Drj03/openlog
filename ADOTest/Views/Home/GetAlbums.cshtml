@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ADOTest.Models.Albums>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">album</th>
+            <th scope="col">artist</th>
+            <th scope="col">totalsongs</th>
+            <th scope="col">totallength</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var album in Model)
+        {
+         <tr>
+            
+            <td>@album.albumName</td>
+            <td>@album.artistName</td>
+            <td>@album.totalSongs</td>
+            <td>@album.totalLength</td>
+        </tr>
+        }
+      
+       
+    </tbody>
+</table>

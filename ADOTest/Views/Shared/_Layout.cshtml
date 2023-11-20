@@ -38,23 +38,27 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="DeleteEmployee">Json</a>
                         </li>
 
-                        <li class="nav-item">
-                            @{
-                                string search =ViewBag.search;
-                            }
-                            <form method="post" asp-controller="Home" asp-action="Index">
-                                <div>
-                                    <input asp-for="@search" />
-                                    <span asp-validation-for="@search" class="text-danger"></span>
-                                </div>
-
-                                <button type="submit">search</button>
-                            </form>
-
-                        </li>
+                      
                     </ul>
                 </div>
             </div>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    @{
+                        string search = ViewBag.search;
+                    }
+                    <form method="post" asp-controller="Home" asp-action="Index" class="search-form">
+                        <div>
+                            <input asp-for="@search" />
+                            <span asp-validation-for="@search" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit">search</button>
+                    </form>
+
+                </li>
+            </ul>
         </nav>
     </header>
     <div class="container">
