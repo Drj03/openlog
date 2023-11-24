@@ -57,6 +57,11 @@ namespace ADOTest.Repositories
             connection.Close();
         }
 
+        public void EditEmployee(Employee employee)
+        {
+            
+        }
+
         public IEnumerable<Employee> searchEmployee(dynamic searchTerm)
         {
             List<Employee> allAlb = new List<Employee>();

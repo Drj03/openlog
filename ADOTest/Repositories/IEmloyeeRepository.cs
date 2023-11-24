@@ -7,5 +7,6 @@ namespace ADOTest.Repositories
         void deleteEmployee(int? id);
         IEnumerable<Employee> searchEmployee(dynamic searchTerm);
         IEnumerable<Employee> allEmployee();
+        void EditEmployee(Employee employee);
     }
 }
